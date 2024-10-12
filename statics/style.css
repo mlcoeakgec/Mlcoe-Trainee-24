@@ -1,0 +1,34 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    background-color: #2ad471;
+
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+li{
+    display: inline;
+}
+#we{
+    width: 460px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.container
+{
+    height: 30rem;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    background-color: white;
+}
