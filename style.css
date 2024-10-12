@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Gilroy";
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: #dadada;
+
+}
+#center{    /* parent image (width, height), image depend on parent height, not width*/
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 80%;
+    height: 80%;
+    
+}
+.imagecontainer{   
+    overflow: hidden;
+    position: absolute;
+    width: 0%;
+    height: 100%;
+   
+}
+/*we fix image based on height*/
+img{  
+    height: 100%;
+} 
+#one{
+    width: 0%;
+
+}
+.text{
+    position: absolute;
+    bottom: 15px;
+    left: -10px;
+    overflow: hidden;
+    width: 400px;
+     height: 100px;
+     z-index: 1000;
+    
+   
+}
+.text h1{
+    top: 100px;
+    font-size: 6vw;
+    position: absolute;
+    color: #fff;
+
+}
