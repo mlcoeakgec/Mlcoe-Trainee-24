@@ -6,53 +6,69 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     color: rgb(10, 5, 15);
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
-
-nav {
+nav{
     display: flex;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    right:0;
+    left: 0;
+    bottom:0;
     justify-content: space-around;
     align-items: center;
     height: 80px;
 }
-
+nav::after{
+    content:"";
+    background-color:rgb(31, 228, 120);
+    position:absolute;
+    top:0;
+    right:0;
+    left: 0;
+    bottom:0;
+    opacity: 0.6;
+    z-index:-1;
+}
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
 }
-
+img{
+    height: 70px;
+    margin: 10px 0px;
+}
 nav ul li {
     margin: 0 25px;
 }
 
 nav ul li a {
-    color: rgb(249, 2, 2);
+    color: white;
     text-decoration: none;
 }
-
+nav ul li:hover {
+    background-color: rgb(252, 251, 251);
+    padding: 4px 12px;
+    border-radius: 10px;
+}
 nav ul li a:hover {
     color: rgb(37, 37, 239);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
-
-.left {
-    font-size: 1.5rem;
-}
-
 .img {
     position: relative;
-    height: 60vh;
+    height: 65vh;
     width: 100%;
 }
 
 .img::before {
     content: "";
-    background-image:url(photos/img.jpg);
+    background-image:url(photo/img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -69,10 +85,10 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 #head h1 {
+    margin-top: 2.8em;
     font-style: italic;
     font-size: 3rem;
 }
@@ -90,6 +106,7 @@ nav ul li a:hover {
 
 .container {
     margin: 0px 20px;
+    padding:20px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -97,7 +114,7 @@ nav ul li a:hover {
 }
 
 .box {
-    border: 2px solid brown;
+    border: 2px solid rgb(139, 190, 151);
     border-radius: 28px;
     width: 400px;
     background-color: lavender;
@@ -133,7 +150,7 @@ nav ul li a:hover {
 
 .item {
     background-color: white;
-    border: 2px solid wheat;
+    border: 2px solid rgb(180, 245, 179);
     border-radius: 15px;
     width: 250px;
     padding: 15px;
@@ -156,7 +173,7 @@ nav ul li a:hover {
 
 .price {
     font-weight: bold;
-    color: rgb(210, 62, 62);
+    color: green;
 }
 
 .item:hover {
@@ -178,7 +195,7 @@ nav ul li a:hover {
 
 #contact::before {
     content: "";
-    background-image:url(photos/contactimg.webp);
+    background-image:url(photo/contactimg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -206,9 +223,9 @@ nav ul li a:hover {
 }
 
 .message input {
-    border-radius: 20px;
-    width: 30%;
-    padding: 10px 2px;
+    border-radius: 15px;
+    width: 40%;
+    padding: 10px 20px;
     margin: 10px auto;
 }
 
