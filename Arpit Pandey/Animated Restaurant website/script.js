@@ -55,3 +55,7 @@ i.addEventListener('mouseover', function (){
     }
     });
 });
+
+function Alert() {
+    alert("Your message has been sent");
+}
