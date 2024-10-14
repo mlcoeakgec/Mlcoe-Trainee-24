@@ -6,53 +6,69 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     color: rgb(10, 5, 15);
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
-
-nav {
-    display: flex;
+nav{
+    display:flex;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    right:0;
+    left: 0;
+    bottom:0;
     justify-content: space-around;
     align-items: center;
     height: 80px;
 }
-
+nav::before{
+    content:"";
+    background-color:rgb(31, 228, 120);
+    position:absolute;
+    top:0;
+    right:0;
+    left: 0;
+    bottom:0;
+    opacity: 0.6;
+    z-index:-1;
+}
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
 }
-
+img{
+    height: 70px;
+    margin: 10px 0px;
+}
 nav ul li {
     margin: 0 25px;
 }
 
 nav ul li a {
-    color: rgb(249, 2, 2);
+    color: white;
     text-decoration: none;
 }
-
+nav ul li:hover {
+    background-color:rgb(206, 195, 195);
+    padding: 4px 12px;
+    border-radius: 10px;
+}
 nav ul li a:hover {
-    color: rgb(37, 37, 239);
-    font-size: 1.2rem;
+    color: rgb(246, 93, 142);
+    font-size: 1.15rem;
 }
-
-.left {
-    font-size: 1.5rem;
-}
-
 .img {
     position: relative;
-    height: 60vh;
+    height: 65vh;
     width: 100%;
 }
 
 .img::before {
     content: "";
-    background-image:url(photos/img.jpg);
+    background-image:url(photo/img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -69,10 +85,10 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 #head h1 {
+    margin-top: 2.8em;
     font-style: italic;
     font-size: 3rem;
 }
@@ -90,14 +106,22 @@ nav ul li a:hover {
 
 .container {
     margin: 0px 20px;
+    padding:20px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
+.box {
+    opacity: 0.5;
+}
+
+.box.visible {
+    opacity: 1;
+}
 
 .box {
-    border: 2px solid brown;
+    border: 2px solid rgb(139, 190, 151);
     border-radius: 28px;
     width: 400px;
     background-color: lavender;
@@ -116,12 +140,13 @@ nav ul li a:hover {
 }
 
 .box:hover {
+ transition: transform 1s ease;
     transform: scale(1.05);
 }
 
 #menu {
     padding: 40px 10px;
-    background-color: rgb(177, 177, 177);
+    background-color: rgb(164, 243, 128);
     text-align: center;
 }
 
@@ -133,7 +158,7 @@ nav ul li a:hover {
 
 .item {
     background-color: white;
-    border: 2px solid wheat;
+    border: 2px solid rgb(180, 245, 179);
     border-radius: 15px;
     width: 250px;
     padding: 15px;
@@ -143,8 +168,11 @@ nav ul li a:hover {
     width: 100%;
     border-radius: 10px;
     height: auto;
+    transition: transform 0.3s ease;
 }
-
+.item:hover img {
+    transform: scale(1.1);
+}
 .item h3 {
     margin: 10px 0;
     font-size: 1.5rem;
@@ -156,7 +184,7 @@ nav ul li a:hover {
 
 .price {
     font-weight: bold;
-    color: rgb(210, 62, 62);
+    color: green;
 }
 
 .item:hover {
@@ -178,7 +206,7 @@ nav ul li a:hover {
 
 #contact::before {
     content: "";
-    background-image:url(photos/contactimg.webp);
+    background-image:url(photo/contactimg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -189,7 +217,46 @@ nav ul li a:hover {
     opacity: 0.4;
     z-index: -1;
 }
-
+.moreitems {
+    background-color: rgb(247, 6, 18);
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+}
+button {
+    animation: button 2s linear infinite;
+  }
+  @keyframes button {
+    0%{
+      transform: rotateY(0);
+    }
+    15% {
+      transform: rotateY(-30deg);
+    }
+    30% {
+      transform: rotateY(30deg);
+    }
+    45% {
+      transform: rotateY(-10deg);
+    }
+    60% {
+      transform: rotateY(10deg);
+    }
+    75% {
+      transform: rotateY(-4deg);
+    }
+    90%{
+       transform: rotateY(4deg);
+    }
+     100% {
+      transform: rotatey(0);
+    }
+  }
+  
+.item2{
+    display: none;
+}
 .bottom {
     height: 80px;
     text-align: center;
@@ -206,9 +273,9 @@ nav ul li a:hover {
 }
 
 .message input {
-    border-radius: 20px;
-    width: 30%;
-    padding: 10px 2px;
+    border-radius: 15px;
+    width: 40%;
+    padding: 10px 20px;
     margin: 10px auto;
 }
 
@@ -237,4 +304,137 @@ nav ul li a:hover {
 .name {
     font-weight: bold;
     margin-top: 10px;
+}
+.phonemenu{
+    display: none;
+}
+a img{
+    height: 70px;
+}
+@media screen and (max-width: 580px) {
+    #head h1 {
+        text-align: center;
+        margin-top: 5em;
+        font-style: italic;
+        font-size: 2rem;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .message input{
+        width: 68%;
+    }
+    #head p {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin: 20px 12px;
+    }
+    
+    img{
+        height: 95px;
+    }
+    nav{
+        height: 120px;
+    }
+    nav ul {
+        flex-direction: column;
+        display:none;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    .phonemenu{
+        display: block;
+        cursor: pointer;
+    }
+    nav ul li:hover {
+        background-color: rgb(206, 195, 195);
+        padding: 4px 10px;
+        border-radius: 10px;
+    }
+    nav ul li a:hover {
+        color: rgb(246, 93, 142);
+        font-size: 1.1rem;
+    }
+    #menu h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    #customers h1 {
+        font-size: 2rem;
+    }   
+
+}
+@media screen and (max-width:350px){
+    #customers h1 {
+        font-size: 1.5rem;
+    }   
+
+}
+
+.slide {
+    margin: 50px 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-inner {
+    margin-top: 20px;
+    position: relative;
+    width: 200px;
+    height: 240px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-inner.flip {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+.front {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.back {
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.moreitems {
+    background-color: rgb(244, 116, 116);
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px; 
+    padding: 10px 20px;
+    cursor: pointer; 
+    transition: background-color 0.8s, transform 0.2s; /* Smooth transition */
+}
+
+.customer-card {
+    animation: slide 2s forwards;
+}
+@keyframes slide {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.moreitems:hover {
+    background-color: rgb(108, 27, 27); 
 }
