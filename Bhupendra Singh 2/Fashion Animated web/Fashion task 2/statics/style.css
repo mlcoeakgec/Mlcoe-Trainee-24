@@ -8,6 +8,9 @@
 
 body {
     background-color: lightgray;
+    margin: 0;
+    padding: 0;
+
 }
 
 /*video section styling*/
@@ -116,24 +119,24 @@ input:checked + label .description {
 
 }
 
-.card[for="c1"]:hover {
+.card[for="c1"] {
  background-image: url(https://as2.ftcdn.net/v2/jpg/08/70/46/01/1000_F_870460117_ACykNVY1VbcSjR27JPPF4NCKfsSQ7Kjq.jpg);
 
 }
 
-.card[for="c2"]:hover {
+.card[for="c2"] {
  background-image: url(https://as1.ftcdn.net/v2/jpg/08/40/14/20/1000_F_840142077_zC79U9KzUqbTK5ezTDHfwnVxXExLtDaA.jpg);  
 }
 
-.card[for="c3"]:hover {
+.card[for="c3"] {
     background-image: url(https://as2.ftcdn.net/v2/jpg/06/71/50/97/1000_F_671509713_h0abOwrUCBpJTdiYofw9JhllrI0qZuoN.jpg);
 }
 
-.card[for="c4"]:hover {
+.card[for="c4"] {
    background-image: url(https://as1.ftcdn.net/v2/jpg/07/97/70/34/1000_F_797703422_YeuEbR81rDKcDGl1CpAEur7gUzsQOAW9.jpg);
 }
 
-.card[for="c5"]:hover {
+.card[for="c5"] {
   background-image: url(https://as1.ftcdn.net/v2/jpg/03/05/92/84/1000_F_305928424_visqTeQnMLvzfT3XBtDZWX9TNTlVLML6.jpg);
 }
 
@@ -158,6 +161,7 @@ header {
     font-size: 24px;
     font-weight: bold;
 }
+
 
 .nav-links {
     list-style: none;
@@ -205,41 +209,56 @@ header {
 }
 
 /* About Section Styling */
-#about-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 40px;
+.about-section {
+    background-color: lightgrey;
+    padding: 60px;
+    margin: 50px auto;
+    max-width: 800px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about-content {
-    text-align: left;
-    max-width: 600px;
-    padding: 20px;
-
-}
-
-.about-content h2{
-    font-size: 50px;
+.about-section h1 {
+    font-size: 36px;
+    color: #333;
     margin-bottom: 20px;
-    color: white;
-
+    text-align: center;
+    font-weight: bold;
 }
 
-.about-content p{
-
+.about-section p {
     font-size: 18px;
-    line-height: 1.6;
-    color: white;
+    color: #fff;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
-@media (max-width: 767px) {
+.about-section strong {
+    color: #007bff;
+}
+
+.about-section .highlight {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
     .about-section {
-        flex-direction: column;
-        text-align: center;
+        padding: 30px;
+        margin: 20px;
     }
-    
+
+    .about-section h1 {
+        font-size: 28px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
 }
 
 /*featured collection styling*/
@@ -347,14 +366,91 @@ header {
         font-size: 16px;
     }
 }
+/*footer sextion*/
 
-
-footer{
-    text-align: center;
-    padding: 20px;
+.footer {
+    background-color:black;
     color: white;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-footer a {
-    color: aliceblue;
+.footer .footer-column {
+    width: 25%;
+    margin: 15px 0;
+}
+
+.footer .footer-column h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.footer .footer-column strong{
+    color: #007bff;
+}
+
+.footer .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer .footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer .footer-column ul li a {
+   color: gray; 
+   text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-column ul li a:hover {
+    color: gold;
+}
+
+.footer .social-icons {
+    display: flex;
+    margin-top: 15px;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #007bff;
+}
+
+.footer .newsletter {
+    margin-top: 20px;
+}
+
+.footer .newsletter button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer .newsletter button:hover {
+    background-color: greenyellow;
+}
+
+/* Responsive Design */ 
+@media (max-width: 768px) {
+    .footer .footer-column {
+        width: 100%;
+        text-align: center;
+    }
 }
