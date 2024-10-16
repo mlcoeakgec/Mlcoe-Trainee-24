@@ -1,7 +1,7 @@
  let moreitems=document.querySelector('.moreitems');
  moreitems.addEventListener('click', function() {
     let ap = document.querySelector('.item2');
-    if (ap.style.display == "none") {
+    if (ap.style.display == "none") { 
         ap.style.display = "block";
         let btn=document.querySelector('button');
         btn.style.display = "none";
@@ -56,6 +56,62 @@ i.addEventListener('mouseover', function (){
     });
 });
 
-function Alert() {
+function validation() {
+    let name = document.getElementById('name').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let message = document.getElementById('message').value.trim();
+
+    if (!name) {
+        alert("Please enter your name.");
+        return false;
+    }
+    if (!email) {
+        alert("Please enter your email.");
+        return false;
+    }
+    if (!message) {
+        alert("Please enter your message.");
+        return false;
+    }
     alert("Your message has been sent");
+    return true; 
 }
+let slider = document.querySelector(".slider");
+let slides = document.querySelectorAll(".slidercontainer");
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+let j = 0;
+
+slides[j].classList.add('active');
+
+next.addEventListener('click', function () {
+    slides[j].classList.remove('active');
+    j = (j === slides.length - 1) ? 0 : j + 1;
+    slides[j].classList.add('active');
+});
+
+prev.addEventListener('click', function () {
+    slides[j].classList.remove('active');
+    j = (j === 0) ? slides.length - 1 : j - 1;
+    slides[j].classList.add('active');
+});
+
+let cursor = document.querySelector(".cursor");
+let timeout;
+
+let showCursor = (x, y) => {
+    cursor.style.top = `${y}px`;
+    cursor.style.left = `${x}px`;
+    cursor.style.display = "block";
+
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        cursor.style.display = "none";
+    }, 1000);
+};
+document.addEventListener("mousemove", (j) => {
+    showCursor(j.clientX,j.clientY);
+});
+document.addEventListener("mouseout", () => {
+    cursor.style.display = "none";
+});
