@@ -371,13 +371,12 @@ a img{
 
 }
 
-.slide {
+.customer-card {
     margin: 50px 3px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
 .card-inner {
     margin-top: 20px;
     position: relative;
@@ -387,10 +386,9 @@ a img{
     transform-style: preserve-3d;
 }
 
-.card-inner.flip {
+.card-inner:hover  {
     transform: rotateY(180deg);
 }
-
 .front, .back {
     position: absolute;
     width: 100%;
@@ -424,10 +422,8 @@ a img{
     border-radius: 10px; 
     padding: 10px 20px;
     cursor: pointer; 
-    transition: background-color 0.8s, transform 0.2s; /* Smooth transition */
 }
-
-.customer-card {
+ .customer-card {
     animation: slide 2s forwards;
 }
 @keyframes slide {
@@ -437,4 +433,64 @@ a img{
 
 .moreitems:hover {
     background-color: rgb(108, 27, 27); 
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    overflow:hidden; 
+    width: 100%; 
+}
+.slidercontainer.active {
+    display: block; 
+}
+.slidercontainer { 
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display:none;
+    width: 100%;
+}
+
+.prev, .next {
+    animation: none;
+    padding: 5px 10px;
+    border-radius: 10px; 
+    background-color: rgb(244, 169, 211);
+    color: white;
+    font-size: 2rem; 
+    cursor: pointer;
+    margin: 0 10px;
+}
+.prev:hover, .next:hover {
+    background-color: rgb(206, 195, 195); 
+}
+.cursor{
+    z-index:999;
+    background-color: rgb(42, 63, 248);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    position: fixed;
+    animation: color 5s infinite;
+    display: none;
+}
+@keyframes color{
+0%{
+    filter: hue-rotate(0deg);
+}
+100%{
+    filter: hue-rotate(360deg);
+}
+}
+.cursor::before{
+    content: '';
+    position: absolute;
+    background-color: rgb(42, 63, 248);
+    height: 50px;
+    width: 50px;
+    opacity: 0.2;
+    transform: translate(-30%,-30%);
+    border-radius: 50%;
 }
